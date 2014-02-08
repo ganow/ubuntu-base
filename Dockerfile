@@ -4,10 +4,10 @@ MAINTAINER  Yoshihiro Nagano <y.nagano.92@gmail.com>
 RUN         apt-get update
 
 RUN         apt-get install -y curl wget git-core
-# RUN         apt-get install -y build-essential libssl-dev zlib1g-dev
+RUN         apt-get install -y build-essential libssl-dev zlib1g-dev
 
-# RUN         apt-get install -y tmux
-# RUN         apt-get install -y htop
+RUN         apt-get install -y tmux
+RUN         apt-get install -y htop
 
 RUN     		apt-get install -y zsh
 ADD         install_oh-my-zsh.sh tmp/
