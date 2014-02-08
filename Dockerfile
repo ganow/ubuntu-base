@@ -9,8 +9,9 @@ RUN         apt-get install -y curl wget git-core
 # RUN         apt-get install -y tmux
 # RUN         apt-get install -y htop
 
-RUN		apt-get install -y zsh
-RUN         curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh && echo 'geho'
+RUN     		apt-get install -y zsh
+ADD         install_oh-my-zsh.sh tmp/
+RUN         sh tmp/install_oh-my-zsh.sh
 
 RUN         git clone https://github.com/riywo/anyenv ~/.anyenv
 RUN         echo '\n# ---------- code inserted from Dockerfile ----------' >> $HOME/.zshrc
