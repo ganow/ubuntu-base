@@ -2,15 +2,15 @@ FROM        ubuntu
 MAINTAINER  Yoshihiro Nagano <y.nagano.92@gmail.com>
 
 RUN         apt-get update
-RUN         apt-get upgrade -y
 
-# RUN         apt-get install -y curl wget build-essential libssl-dev zlib1g-dev
-RUN         apt-get install -y git-core
+RUN         apt-get install -y curl wget git-core
+# RUN         apt-get install -y build-essential libssl-dev zlib1g-dev
 
 # RUN         apt-get install -y tmux
 # RUN         apt-get install -y htop
 
-RUN         curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+RUN		apt-get install -y zsh
+RUN         curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh && echo 'geho'
 
 RUN         git clone https://github.com/riywo/anyenv ~/.anyenv
 RUN         echo '\n# ---------- code inserted from Dockerfile ----------' >> $HOME/.zshrc
