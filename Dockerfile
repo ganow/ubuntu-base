@@ -24,4 +24,6 @@ RUN         echo '    export PATH="$D/shims:$PATH"' >> $HOME/.zshrc
 RUN         echo '  done' >> $HOME/.zshrc
 RUN         echo 'fi' >> $HOME/.zshrc
 
+RUN         rm tmp/install_oh-my-zsh.sh
+
 ENTRYPOINT  zsh
