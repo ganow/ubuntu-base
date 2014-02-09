@@ -19,5 +19,6 @@ RUN         apt-get clean
 RUN         git clone https://github.com/riywo/anyenv ~/.anyenv
 ADD         for_anyenv_rc tmp/
 RUN         cat tmp/for_anyenv_rc >> $HOME/.zshrc
+RUN         rm tmp/for_anyenv_rc
 
 ENTRYPOINT  zsh
